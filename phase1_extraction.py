@@ -30,7 +30,7 @@ from docx import Document
 from PIL import Image, ImageOps, ImageFilter
 
 DOSSIER_CV = sys.argv[1] if len(sys.argv) > 1 else "cv_exemples"
-DOSSIER_RESULTATS = "resultats"
+DOSSIER_RESULTATS = "resultats" if DOSSIER_CV == "cv_exemples" else "resultats_" + os.path.basename(os.path.normpath(DOSSIER_CV))
 ANNEE_COURANTE = date.today().year
 
 
