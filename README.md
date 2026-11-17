@@ -26,6 +26,18 @@ Les CV du dossier `cv_exemples/` sont **fictifs** (créés par `generer_cv_exemp
 
 Sorties : `resultats/cv_nettoyes.csv` et `.json`, `resultats/journal_nettoyage.csv` (chaque correction avec sa valeur avant et après), `resultats/exemple_normalisation.csv` et `resultats/textes_nettoyes/`.
 
+## Phase 3 : reconnaissance d'entités nommées (NER)
+
+`phase3_ner.py` :
+
+1. **Découverte** : le modèle français pré-entraîné de spaCy (`fr_core_news_sm`) appliqué aux CV nettoyés ; il ne reconnaît que les personnes, lieux et organisations
+2. **Modèle personnalisé** : entraînement d'un modèle spaCy NER sur des CV annotés au format JSON du projet (étiquette, début, fin, texte). Le chargement corrige les défauts courants : fin d'entité incluse, espaces en bord d'entité, annotations qui se chevauchent, entités mal alignées sur les mots
+3. **Évaluation** : précision, rappel et score F, globalement et par étiquette, analyse des erreurs, puis application aux CV de la phase 2
+
+`generer_donnees_annotees.py` crée un jeu de 400 CV fictifs annotés (11 étiquettes : NOM, POSTE, VILLE, TELEPHONE, EMAIL, ENTREPRISE, DATE, DIPLOME, ETABLISSEMENT, COMPETENCE, LANGUE). Les CV de test utilisent des noms, entreprises, villes et établissements absents de l'entraînement. Pour utiliser un autre jeu annoté : `python phase3_ner.py mon_fichier.json`.
+
+Sorties : `resultats_ner/` (scores, erreurs, entités trouvées, graphique) et le modèle dans `modele_ner/` (non versionné, recréé par le script).
+
 ## Installation
 
 1. Installer **Tesseract OCR** pour Windows (installateur UB Mannheim), en cochant la langue **French** dans « Additional language data ».
@@ -42,6 +54,8 @@ python -m spacy download fr_core_news_sm
 python generer_cv_exemples.py
 python phase1_extraction.py
 python phase2_nettoyage.py
+python generer_donnees_annotees.py
+python phase3_ner.py
 ```
 
 Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
@@ -52,6 +66,8 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 |---|---|
 | `phase1_extraction.py` | Extraction des données (phase 1) |
 | `phase2_nettoyage.py` | Nettoyage et normalisation (phase 2) |
+| `generer_donnees_annotees.py` | Création du jeu de CV annotés |
+| `phase3_ner.py` | Reconnaissance d'entités : entraînement et évaluation (phase 3) |
 | `generer_cv_exemples.py` | Création des CV fictifs de test |
 | `cv_exemples/` | CV de test (4 formats) |
 | `resultats/` | Informations extraites |

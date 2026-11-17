@@ -1,0 +1,207 @@
+{
+  "cv_aminata_ndiaye.txt": {
+    "NOM": [
+      "AMINATA NDIAYE"
+    ],
+    "POSTE": [
+      "Conseillère clientèle bilingue",
+      "Conseillère clientèle avec 6 ans d'expérience en centre de contact",
+      "Conseillère clientèle",
+      "112",
+      "Téléconseillère",
+      "Centre d'Appels Horizon"
+    ],
+    "VILLE": [
+      "Dakar",
+      "Dakar",
+      "Dakar",
+      "Dakar"
+    ],
+    "TELEPHONE": [
+      "+221 77 512 34 56 aminata.ndiaye@example.com"
+    ],
+    "ENTREPRISE": [
+      "TéléServices Afrique"
+    ],
+    "DATE": [
+      "Mars 2022",
+      "2024",
+      "Janvier 2020",
+      "Février 2022",
+      "2019",
+      "2016"
+    ],
+    "DIPLOME": [
+      "Licence en Gestion des Entreprises",
+      "Baccalauréat série L"
+    ],
+    "ETABLISSEMENT": [
+      "Université Cheikh Anta Diop",
+      "Lycée Blaise Diagne"
+    ],
+    "COMPETENCE": [
+      "Relation client",
+      "écoute active",
+      "gestion des réclamations",
+      "Vente additionnelle",
+      "fidélisation",
+      "Salesforce",
+      "Zendesk",
+      "Pack Office"
+    ],
+    "LANGUE": [
+      "Français",
+      "Anglais",
+      "Wolof"
+    ]
+  },
+  "cv_awa_sarr_scan.txt": {
+    "NOM": [
+      "Awa SARR"
+    ],
+    "POSTE": [
+      "Téléconseillère",
+      "Téléconseillère",
+      "Agent d'accueil"
+    ],
+    "TELEPHONE": [
+      "78 645 12 90"
+    ],
+    "EMAIL": [
+      "awa.sarr@example.com"
+    ],
+    "VILLE": [
+      "Thiès",
+      "DMT"
+    ],
+    "DATE": [
+      "2023",
+      "2025",
+      "\"2022",
+      "2023",
+      "2022",
+      "2020"
+    ],
+    "ENTREPRISE": [
+      "Callmax Sénégal"
+    ],
+    "COMPETENCE": [
+      "taux de résolution",
+      "satisfaction",
+      "Appels entrants",
+      "assistance technique",
+      "Excel",
+      "prise de notes rapide"
+    ],
+    "DIPLOME": [
+      "Banque sai eas dé Thiès",
+      "BTS Communication d'entreprise",
+      "Baccalauréat série G"
+    ],
+    "ETABLISSEMENT": [
+      "ISM Dakar",
+      "PT IT RENTE PRLTES DUR"
+    ],
+    "LANGUE": [
+      "Word",
+      "Français",
+      "Wolof",
+      "Anglais"
+    ]
+  },
+  "cv_ibrahima_ba.txt": {
+    "NOM": [
+      "Ibrahima BA"
+    ],
+    "POSTE": [
+      "Agent de recouvrement",
+      "Conseiller clientèle",
+      "Agent de recouvrement",
+      "Téléopérateur"
+    ],
+    "VILLE": [
+      "Rufisque"
+    ],
+    "TELEPHONE": [
+      "+221 76 908 11 22"
+    ],
+    "EMAIL": [
+      "ibrahima.ba@example.com"
+    ],
+    "DATE": [
+      "Septembre 2021",
+      "03/2019",
+      "08/2021",
+      "2021"
+    ],
+    "ENTREPRISE": [
+      "Crédit Express Dakar",
+      "Phone Services Dakar"
+    ],
+    "DIPLOME": [
+      "DUT Techniques de commercialisation"
+    ],
+    "ETABLISSEMENT": [
+      "IUT de Dakar"
+    ],
+    "COMPETENCE": [
+      "Recouvrement",
+      "négociation",
+      "gestion des appels sortants",
+      "Excel"
+    ],
+    "LANGUE": [
+      "Français",
+      "Wolof",
+      "Arabe"
+    ]
+  },
+  "cv_moussa_fall_photo.txt": {
+    "NOM": [
+      "MOUSSA FALL"
+    ],
+    "POSTE": [
+      "Chargé de clientèle",
+      "Chargé de clientèle"
+    ],
+    "VILLE": [
+      "Saint-Louis"
+    ],
+    "TELEPHONE": [
+      "70 321 54 87"
+    ],
+    "EMAIL": [
+      "moussa.fall@examiple.com"
+    ],
+    "ENTREPRISE": [
+      "Orbis Télécom",
+      "Distribution Plus"
+    ],
+    "DATE": [
+      "2021",
+      "2024",
+      "2019",
+      "2021",
+      "2019"
+    ],
+    "COMPETENCE": [
+      "Commercial terrain",
+      "Négociation",
+      "prospection",
+      "CRM",
+      "Excel",
+      "communication"
+    ],
+    "DIPLOME": [
+      "Master 1 Marketing et Commerce"
+    ],
+    "ETABLISSEMENT": [
+      "Université Gaston Berger"
+    ],
+    "LANGUE": [
+      "Français",
+      "Anglais",
+      "Pulaar"
+    ]
+  }
+}

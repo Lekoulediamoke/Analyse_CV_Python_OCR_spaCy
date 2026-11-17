@@ -14,7 +14,8 @@
 # Sorties : resultats/cv_nettoyes.json et .csv, resultats/textes_nettoyes/,
 #           resultats/journal_nettoyage.csv (chaque correction : avant -> après)
 #
-# Usage : python phase2_nettoyage.py
+# Usage : python phase2_nettoyage.py [dossier_de_resultats]
+#         (ex. : python phase2_nettoyage.py resultats_cv_reels)
 # ==============================================================
 
 import csv
