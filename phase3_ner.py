@@ -19,6 +19,7 @@ import glob
 import json
 import os
 import random
+import re
 import sys
 import time
 
@@ -195,6 +196,68 @@ def entrainer(spacy, train, test, etiquettes):
 
 
 # ==============================================================
+# 2c. RÈGLES + MODÈLE : un système hybride
+# ==============================================================
+# Un e-mail ou un numéro de téléphone a une forme très régulière : une
+# expression régulière le reconnaît à coup sûr, quelle que soit la mise en
+# page. Les règles passent AVANT le modèle, qui respecte les entités déjà
+# trouvées et se concentre sur celles qui demandent le contexte.
+MOTIF_EMAIL = r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+"
+MOTIF_TELEPHONE = r"(?:\(?(?:\+|00)\d{3}\)?\s?)?\b(?:7[05678]|33)\s?\d{3}\s?\d{2}\s?\d{2}\b"
+# Étiquettes qui peuvent ne contenir aucune lettre
+SANS_LETTRES_AUTORISEES = {"DATE", "TELEPHONE"}
+
+
+def ajouter_regles(nlp):
+    from spacy.language import Language
+    from spacy.util import filter_spans
+
+    if not Language.has_factory("regles_coordonnees"):
+        @Language.component("regles_coordonnees")
+        def regles_coordonnees(doc):
+            trouves = []
+            for motif, etiquette in ((MOTIF_EMAIL, "EMAIL"), (MOTIF_TELEPHONE, "TELEPHONE")):
+                for m in re.finditer(motif, doc.text):
+                    span = doc.char_span(m.start(), m.end(), label=etiquette,
+                                         alignment_mode="expand")
+                    if span is not None:
+                        trouves.append(span)
+            doc.ents = filter_spans(list(doc.ents) + trouves)
+            return doc
+
+        @Language.component("filtre_entites")
+        def filtre_entites(doc):
+            # Retire les entités absurdes : « 112 » étiqueté POSTE, ou un
+            # « téléphone » qui n'a pas la forme d'un numéro de téléphone
+            gardees = []
+            for e in doc.ents:
+                if e.label_ == "TELEPHONE" and not re.fullmatch(MOTIF_TELEPHONE, e.text.strip()):
+                    continue
+                if e.label_ == "EMAIL" and not re.fullmatch(MOTIF_EMAIL, e.text.strip()):
+                    continue
+                if e.label_ not in SANS_LETTRES_AUTORISEES \
+                        and len(re.findall(r"[A-Za-zÀ-ÿ]", e.text)) < 2:
+                    continue
+                gardees.append(e)
+            doc.ents = gardees
+            return doc
+
+    nlp.add_pipe("regles_coordonnees", before="ner")
+    nlp.add_pipe("filtre_entites", after="ner")
+    return nlp
+
+
+def comparer(scores_modele, scores_hybride):
+    print("\n=== Modèle seul ou modèle + règles (CV de test) ===")
+    print(f"{'':<16}{'Modèle seul':>14}{'Modèle + règles':>18}")
+    print(f"{'Score F global':<16}{scores_modele['ents_f']:>14.2%}{scores_hybride['ents_f']:>18.2%}")
+    for etiquette in ("EMAIL", "TELEPHONE"):
+        avant = scores_modele["ents_per_type"].get(etiquette, {}).get("f", 0)
+        apres = scores_hybride["ents_per_type"].get(etiquette, {}).get("f", 0)
+        print(f"{etiquette:<16}{avant:>14.2%}{apres:>18.2%}")
+
+
+# ==============================================================
 # 3. ÉVALUATION
 # ==============================================================
 def evaluer(nlp, test):
@@ -327,10 +390,17 @@ def main():
     nlp, historique = entrainer(spacy, train, test, etiquettes)
     print(f"Durée de l'entraînement : {(time.time() - debut) / 60:.1f} min")
     nlp.to_disk(DOSSIER_MODELE)
-    print(f"Modèle enregistré dans le dossier « {DOSSIER_MODELE} »")
+    print(f"Modèle enregistré dans le dossier « {DOSSIER_MODELE} » (sans les règles,")
+    print("qui sont ajoutées par la fonction ajouter_regles au moment de l'utiliser)")
     ecrire_csv(os.path.join(DOSSIER_SORTIE, "historique_entrainement.csv"), historique)
 
-    # 3. Évaluation
+    # Règles + modèle
+    scores_modele = nlp.evaluate(test)
+    ajouter_regles(nlp)
+    scores_hybride = nlp.evaluate(test)
+    comparer(scores_modele, scores_hybride)
+
+    # 3. Évaluation (système final : modèle + règles)
     _, lignes = evaluer(nlp, test)
     analyser_erreurs(nlp, test)
     graphiques(historique, lignes)

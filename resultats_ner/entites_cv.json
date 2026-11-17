@@ -7,7 +7,6 @@
       "Conseillère clientèle bilingue",
       "Conseillère clientèle avec 6 ans d'expérience en centre de contact",
       "Conseillère clientèle",
-      "112",
       "Téléconseillère",
       "Centre d'Appels Horizon"
     ],
@@ -18,28 +17,29 @@
       "Dakar"
     ],
     "TELEPHONE": [
-      "+221 77 512 34 56 aminata.ndiaye@example.com"
+      "+221 77 512 34 56"
+    ],
+    "EMAIL": [
+      "aminata.ndiaye@example.com"
     ],
     "ENTREPRISE": [
       "TéléServices Afrique"
     ],
     "DATE": [
       "Mars 2022",
-      "2024",
       "Janvier 2020",
       "Février 2022",
       "2019",
       "2016"
     ],
-    "DIPLOME": [
-      "Licence en Gestion des Entreprises",
-      "Baccalauréat série L"
-    ],
-    "ETABLISSEMENT": [
-      "Université Cheikh Anta Diop",
-      "Lycée Blaise Diagne"
+    "LANGUE": [
+      "français",
+      "Français",
+      "Anglais",
+      "Wolof"
     ],
     "COMPETENCE": [
+      "Salesforce",
       "Relation client",
       "écoute active",
       "gestion des réclamations",
@@ -49,15 +49,19 @@
       "Zendesk",
       "Pack Office"
     ],
-    "LANGUE": [
-      "Français",
-      "Anglais",
-      "Wolof"
+    "DIPLOME": [
+      "Licence en Gestion des Entreprises",
+      "Baccalauréat série L"
+    ],
+    "ETABLISSEMENT": [
+      "Université Cheikh Anta Diop",
+      "Lycée Blaise Diagne"
     ]
   },
   "cv_awa_sarr_scan.txt": {
     "NOM": [
-      "Awa SARR"
+      "Awa SARR",
+      "3 Wolof"
     ],
     "POSTE": [
       "Téléconseillère",
@@ -71,19 +75,20 @@
       "awa.sarr@example.com"
     ],
     "VILLE": [
-      "Thiès",
-      "DMT"
+      "Thiès"
     ],
     "DATE": [
       "2023",
       "2025",
-      "\"2022",
+      "2022",
       "2023",
       "2022",
       "2020"
     ],
     "ENTREPRISE": [
-      "Callmax Sénégal"
+      "Callmax Sénégal",
+      "DMT",
+      "Banque ee Thiès"
     ],
     "COMPETENCE": [
       "taux de résolution",
@@ -91,21 +96,18 @@
       "Appels entrants",
       "assistance technique",
       "Excel",
+      "Word",
       "prise de notes rapide"
     ],
     "DIPLOME": [
-      "Banque sai eas dé Thiès",
       "BTS Communication d'entreprise",
       "Baccalauréat série G"
     ],
     "ETABLISSEMENT": [
       "ISM Dakar",
-      "PT IT RENTE PRLTES DUR"
+      "Frangeis"
     ],
     "LANGUE": [
-      "Word",
-      "Français",
-      "Wolof",
       "Anglais"
     ]
   },
@@ -115,9 +117,12 @@
     ],
     "POSTE": [
       "Agent de recouvrement",
-      "Conseiller clientèle",
       "Agent de recouvrement",
       "Téléopérateur"
+    ],
+    "DIPLOME": [
+      "/ Conseiller clientèle",
+      "DUT Techniques de commercialisation"
     ],
     "VILLE": [
       "Rufisque"
@@ -137,9 +142,6 @@
     "ENTREPRISE": [
       "Crédit Express Dakar",
       "Phone Services Dakar"
-    ],
-    "DIPLOME": [
-      "DUT Techniques de commercialisation"
     ],
     "ETABLISSEMENT": [
       "IUT de Dakar"
@@ -165,17 +167,26 @@
       "Chargé de clientèle"
     ],
     "VILLE": [
-      "Saint-Louis"
+      "Saint-Louis",
+      "EDUCATION"
     ],
     "TELEPHONE": [
-      "70 321 54 87"
+      "70 321 5487"
     ],
-    "EMAIL": [
-      "moussa.fall@examiple.com"
+    "COMPETENCE": [
+      "moussa fall @example.com",
+      "Négociation et vente de forfaits mobiles",
+      "Commercial terrain",
+      "Distribution Plus",
+      "Prospection et vente en porte-a-parte",
+      "Négociation",
+      "Prospection",
+      "CRM",
+      "Excel",
+      "communication"
     ],
     "ENTREPRISE": [
-      "Orbis Télécom",
-      "Distribution Plus"
+      "Orbis Télécom"
     ],
     "DATE": [
       "2021",
@@ -183,14 +194,6 @@
       "2019",
       "2021",
       "2019"
-    ],
-    "COMPETENCE": [
-      "Commercial terrain",
-      "Négociation",
-      "prospection",
-      "CRM",
-      "Excel",
-      "communication"
     ],
     "DIPLOME": [
       "Master 1 Marketing et Commerce"

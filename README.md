@@ -38,6 +38,15 @@ Sorties : `resultats/cv_nettoyes.csv` et `.json`, `resultats/journal_nettoyage.c
 
 Sorties : `resultats_ner/` (scores, erreurs, entités trouvées, graphique) et le modèle dans `modele_ner/` (non versionné, recréé par le script).
 
+## Tests
+
+`tester_projet.py` vérifie automatiquement les résultats de chaque phase sur les CV fictifs, dont le contenu est connu (e-mails, formats, années d'expérience, informations personnelles retirées, scores du modèle…). Il se lance après chaque phase et avant chaque envoi sur GitHub :
+
+```
+python tester_projet.py        # toutes les phases
+python tester_projet.py 2      # une seule phase
+```
+
 ## Installation
 
 1. Installer **Tesseract OCR** pour Windows (installateur UB Mannheim), en cochant la langue **French** dans « Additional language data ».
@@ -67,6 +76,7 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 | `phase1_extraction.py` | Extraction des données (phase 1) |
 | `phase2_nettoyage.py` | Nettoyage et normalisation (phase 2) |
 | `generer_donnees_annotees.py` | Création du jeu de CV annotés |
+| `tester_projet.py` | Tests automatiques de chaque phase |
 | `phase3_ner.py` | Reconnaissance d'entités : entraînement et évaluation (phase 3) |
 | `generer_cv_exemples.py` | Création des CV fictifs de test |
 | `cv_exemples/` | CV de test (4 formats) |

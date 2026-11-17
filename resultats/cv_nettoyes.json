@@ -219,15 +219,13 @@
     "niveau_bac_plus": 2,
     "formation": [
       "2022 : BTS Communication d'entreprise, ISM Dakar",
-      "2020 : Baccalauréat série G",
-      "SAVOIR-FAIRE PT IT RENTE PRLTES DUR",
-      "Appels entrants ; assistance technique ; Excel ; Word : prise de notes rapide"
+      "2020 : Baccalauréat série G"
     ],
     "experience": [
       "2023 - 2025 : Téléconseillère, Callmax Sénégal",
       "Service après-vente et assistance technique de niveau 1",
       "Respect des indicateurs : DMT, taux de résolution, satisfaction",
-      "\"2022 - 2023 : Agent d'accueil (stage}, Banque sai eas dé Thiès",
+      "2022 - 2023 : Agent d'accueil (stage), Banque ee Thiès",
       "Accueil et orientation de la clientèle"
     ],
     "periodes": [
@@ -235,7 +233,13 @@
       "2023-01 -> 2025-12"
     ],
     "annees_experience": 4.0,
-    "competences": [],
+    "competences": [
+      "Appels entrants",
+      "Assistance technique",
+      "Excel",
+      "Word",
+      "Prise de notes rapide"
+    ],
     "competences_cles": [
       "Service après-vente",
       "Appels entrants",
@@ -245,7 +249,6 @@
     ],
     "langues": [
       "Anglais",
-      "Français",
       "Wolof"
     ],
     "lemmes": [
@@ -263,13 +266,11 @@
       "communication",
       "dakar",
       "dmt",
-      "dur",
-      "eas",
       "entrant",
       "entreprise",
       "excel",
       "faire",
-      "français",
+      "frangeis",
       "indicateur",
       "ism",
       "langues",
@@ -277,15 +278,13 @@
       "note",
       "notion",
       "orientation",
+      "parcourir",
       "parcours",
       "prise",
-      "prlte",
       "professionnel",
       "rapide",
-      "rente",
       "respect",
       "résolution",
-      "sai",
       "sarr",
       "satisfaction",
       "savoir",
@@ -317,13 +316,11 @@
       "commun",
       "dakar",
       "dmt",
-      "dur",
-      "eas",
       "entrant",
       "entrepris",
       "excel",
       "fair",
-      "franc",
+      "frangeis",
       "indiqu",
       "ism",
       "langu",
@@ -333,13 +330,10 @@
       "orient",
       "parcour",
       "pris",
-      "prlte",
       "professionnel",
       "rapid",
-      "rent",
       "respect",
       "résolu",
-      "sai",
       "sarr",
       "satisfact",
       "savoir",
@@ -356,7 +350,7 @@
       "wolof",
       "word"
     ],
-    "a_verifier": "OCR peu fiable (77/100)"
+    "a_verifier": "OCR peu fiable (75/100)"
   },
   {
     "fichier": "cv_ibrahima_ba.docx",
@@ -495,7 +489,7 @@
   {
     "fichier": "cv_moussa_fall_photo.png",
     "nom": "Moussa Fall",
-    "email": "moussa.fall@examiple.com",
+    "email": "moussa.fall@example.com",
     "telephone": "+221 70 321 54 87",
     "poste_vise": "Chargé de clientèle",
     "categorie_poste": "Chargé de clientèle",
@@ -506,10 +500,10 @@
     ],
     "experience": [
       "Chargé de clientèle, Orbis Télécom (2021 - 2024)",
-      "Gestion d'un portefeuille dé clients professionnels",
+      "Gestion d'un portefeuille de clients professionnels",
       "Négociation et vente de forfaits mobiles",
-      "Commercial terrain, Distribution Plus (2019 - 2021}",
-      "Prospection et vente én porte-a-porte"
+      "Commercial terrain, Distribution Plus (2019 - 2021)",
+      "Prospection et vente en porte-a-parte"
     ],
     "periodes": [
       "2019-01 -> 2021-12",
@@ -560,6 +554,7 @@
       "master",
       "mobile",
       "moussa",
+      "mousser",
       "négociation",
       "orbis",
       "portefeuille",
@@ -569,7 +564,6 @@
       "terrain",
       "télécom",
       "université",
-      "vent",
       "vente"
     ],
     "racines": [
@@ -608,6 +602,6 @@
       "univers",
       "vent"
     ],
-    "a_verifier": "non"
+    "a_verifier": "e-mail reconstitué après l'OCR"
   }
 ]

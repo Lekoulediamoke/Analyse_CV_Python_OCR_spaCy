@@ -27,7 +27,7 @@ cv_awa_sarr_scan.txt;ORG;Callmax Sénégal
 cv_awa_sarr_scan.txt;ORG;Service
 cv_awa_sarr_scan.txt;LOC;Respect
 cv_awa_sarr_scan.txt;MISC;DMT
-cv_awa_sarr_scan.txt;ORG;"Banque sai eas dé Thiès
+cv_awa_sarr_scan.txt;ORG;"Banque ee Thiès
 Accueil"
 cv_ibrahima_ba.txt;MISC;"Ibrahima BA
 Agent"
@@ -50,14 +50,14 @@ cv_moussa_fall_photo.txt;MISC;MOUSSA
 cv_moussa_fall_photo.txt;MISC;"FALL
 Chargé de clientèle"
 cv_moussa_fall_photo.txt;LOC;Saint-Louis
-cv_moussa_fall_photo.txt;MISC;"EXPÉRIENCE
-Chargé de clientèle"
+cv_moussa_fall_photo.txt;PER;"EXPÉRIENCE
+Chargé"
 cv_moussa_fall_photo.txt;ORG;Orbis Télécom
-cv_moussa_fall_photo.txt;MISC;"Gestion d'un portefeuille dé clients professionnels
-"
-cv_moussa_fall_photo.txt;MISC;Négociation et vente de forfaits mobiles
+cv_moussa_fall_photo.txt;MISC;"Gestion d'un portefeuille de clients professionnels
+Négociation"
 cv_moussa_fall_photo.txt;ORG;Commercial terrain
 cv_moussa_fall_photo.txt;MISC;Distribution Plus
 cv_moussa_fall_photo.txt;MISC;Prospection
 cv_moussa_fall_photo.txt;LOC;EDUCATION
 cv_moussa_fall_photo.txt;MISC;Master 1 Marketing
+cv_moussa_fall_photo.txt;PER;Gaston Berger

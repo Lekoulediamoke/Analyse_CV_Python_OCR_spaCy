@@ -80,11 +80,16 @@ MOTS_COURTS_FRANCAIS = {"a", "à", "au", "de", "du", "en", "et", "la", "le", "un
 def nettoyer_ligne(ligne):
     """Retire le bruit d'une ligne avec des expressions régulières."""
     ligne = re.sub(r"[‘’`´]", "'", ligne)                       # apostrophes unifiées
+    ligne = re.sub(r"\s+[|•]\s+", " - ", ligne)                  # « | » séparateur : on le garde
     ligne = re.sub(r"[|_~#*¥©®]+", " ", ligne)                    # symboles parasites d'OCR
     # Titre de section entouré de bruit : « a PARCOURS PROFESSIONNEL », « SAVOIR-FAIRE eek Set! »
     titre = re.search(r"[A-ZÀ-Ý][A-ZÀ-Ý' -]{3,}[A-ZÀ-Ý]", ligne)
-    if titre and titre.start() <= 2 and cle(titre.group(0)) in TITRES_CONNUS:
-        return titre.group(0).strip()
+    if titre and titre.start() <= 2 and not re.search(r"[,;:]", ligne):
+        mots_titre = titre.group(0).split()
+        for n in range(len(mots_titre), 0, -1):          # titre le plus long reconnu
+            candidat = " ".join(mots_titre[:n])
+            if cle(candidat) in TITRES_CONNUS:
+                return candidat
     ligne = re.sub(r"(\w)-\s*-?\s*(\w)", r"\1-\2", ligne)        # « apres- -vente » -> « apres-vente »
     ligne = re.sub(r"\.(\s+[a-zà-ÿ])", r"\1", ligne)              # point au milieu d'une phrase
     ligne = re.sub(r"\s+([.,)])", r"\1", ligne)                   # pas d'espace avant . , )
@@ -188,12 +193,26 @@ def normaliser_nom(nom):
     return " ".join("-".join(p.capitalize() for p in mot.split("-")) for mot in nom.split())
 
 
+DOMAINES_COURANTS = ["gmail.com", "yahoo.fr", "yahoo.com", "hotmail.com", "hotmail.fr",
+                     "outlook.com", "outlook.fr", "live.fr", "icloud.com", "orange.sn",
+                     "example.com", "exemple.sn"]
+
+
 def normaliser_email(email):
+    """Renvoie (e-mail, valide ?, domaine corrigé ?). L'OCR déforme souvent le
+    domaine (« examiple.com ») : on le rapproche d'un domaine connu."""
     if not email:
-        return None, False
+        return None, False, False
     email = email.strip().lower().replace(" ", "")
+    corrige = False
+    if "@" in email:
+        local, domaine = email.rsplit("@", 1)
+        if domaine not in DOMAINES_COURANTS:
+            proche = difflib.get_close_matches(domaine, DOMAINES_COURANTS, n=1, cutoff=0.85)
+            if proche:
+                email, corrige = f"{local}@{proche[0]}", True
     valide = re.fullmatch(r"[a-z0-9._%+-]+@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}", email)
-    return email, bool(valide)
+    return email, bool(valide), corrige
 
 
 def normaliser_telephone(tel):
@@ -409,8 +428,9 @@ def nettoyer_cv(cv, nlp, racineur):
     # B. Champs
     nom = normaliser_nom(cv["nom"])
     noter(f, "nom", cv["nom"], nom, "casse unifiée")
-    email, email_ok = normaliser_email(cv["email"])
-    noter(f, "email", cv["email"], email, "e-mail en minuscules")
+    email, email_ok, domaine_corrige = normaliser_email(cv["email"])
+    noter(f, "email", cv["email"], email,
+          "domaine d'e-mail corrigé (OCR)" if domaine_corrige else "e-mail en minuscules")
     tel, tel_ok = normaliser_telephone(cv["telephone"])
     noter(f, "telephone", cv["telephone"], tel, "format international")
     poste = corriger_mots(cv["poste_vise"] or "", f, "poste_vise") or None
@@ -425,6 +445,8 @@ def nettoyer_cv(cv, nlp, racineur):
 
     # Contrôles de cohérence
     alertes = [] if cv["a_verifier"] == "non" else [cv["a_verifier"]]
+    if domaine_corrige:
+        alertes.append("domaine d'e-mail corrigé")
     if email and not email_ok:
         alertes.append("e-mail invalide")
     if tel and not tel_ok:

@@ -196,7 +196,9 @@ def detecter_titre(ligne):
                 phrase = proche[0] if proche else phrase
             if phrase in TITRE_VERS_SECTION:
                 # Un titre est seul sur sa ligne, ou écrit en majuscules
-                if not reste or (len(reste) <= 15 and majuscules >= 0.6):
+                # ou suivi de bruit d'OCR en majuscules (« SAVOIR-FAIRE PT IT RENTE »)
+                if not reste or (len(reste) <= 15 and majuscules >= 0.6) \
+                        or (majuscules >= 0.9 and not re.search(r"[,;:]", ligne)):
                     return TITRE_VERS_SECTION[phrase]
     return None
 
@@ -209,6 +211,9 @@ def decouper_sections(texte):
         if titre:
             courante = titre
             sections.setdefault(courante, [])
+            # « COMPÉTENCES : Excel, CRM » : le contenu après « : » est gardé
+            if ":" in ligne and ligne.split(":", 1)[1].strip():
+                sections[courante].append(ligne.split(":", 1)[1].strip())
         else:
             sections.setdefault(courante, []).append(ligne)
     return sections
