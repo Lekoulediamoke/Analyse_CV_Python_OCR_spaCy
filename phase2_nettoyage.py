@@ -22,13 +22,14 @@ import difflib
 import json
 import os
 import re
+import sys
 import unicodedata
 from datetime import date, datetime
 
 from dateutil import parser as date_parser
 from dateutil.relativedelta import relativedelta
 
-DOSSIER = "resultats"
+DOSSIER = sys.argv[1] if len(sys.argv) > 1 else "resultats"
 AUJOURD_HUI = date.today()
 journal = []          # toutes les corrections, pour le rapport
 
