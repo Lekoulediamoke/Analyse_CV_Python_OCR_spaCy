@@ -1,0 +1,43 @@
+{
+  "fichier": "cv_awa_sarr_scan.pdf",
+  "methode_extraction": "OCR (PDF scanné)",
+  "confiance_ocr": 74.9,
+  "a_verifier": "OCR peu fiable (75/100)",
+  "nom": "Awa Sarr",
+  "poste_vise": "Téléconseillère",
+  "email": "awa.sarr@example.com",
+  "telephone": "78 645 12 90",
+  "formation": [
+    "2022 : BTS Communication d'entreprise, ISM Dakar",
+    "2020 : Baccalaursat série G",
+    "SAVOIR-FAIRE PRET EE TEUNRUES VERRE ...",
+    "Appels entrants ; assistance technique ; Excel ; Word : prise de notes rapide"
+  ],
+  "diplome_le_plus_eleve": "Bac+2 (BTS, DUT…)",
+  "experience": [
+    "2023 - 2025 : Téléconseillère, Callmax Sénégal",
+    "Service. après- -vente et assistance technique de niveau 1",
+    "* Respect des indicateurs : DMT, taux de resolution, satisfaction",
+    "2022 - 2023 : Agent d'accueil (stage), Banque ee Thies",
+    ". Accueil et orientation de la clientèle"
+  ],
+  "annees_experience": 4.8,
+  "competences": [],
+  "competences_metier": [
+    "Service après-vente",
+    "Appels entrants",
+    "Assistance technique",
+    "Bureautique",
+    "Indicateurs (KPI)"
+  ],
+  "langues": [
+    "Anglais",
+    "Wolof"
+  ],
+  "sections_detectees": [
+    "experience",
+    "formation",
+    "langues"
+  ],
+  "duree_traitement_s": 1.48
+}

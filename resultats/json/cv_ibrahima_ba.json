@@ -1,0 +1,44 @@
+{
+  "fichier": "cv_ibrahima_ba.docx",
+  "methode_extraction": "texte Word",
+  "confiance_ocr": null,
+  "a_verifier": "non",
+  "nom": "Ibrahima Ba",
+  "poste_vise": "Agent de recouvrement / Conseiller clientèle",
+  "email": "ibrahima.ba@example.com",
+  "telephone": "+221 76 908 11 22",
+  "formation": [
+    "2021 : DUT Techniques de commercialisation - IUT de Dakar"
+  ],
+  "diplome_le_plus_eleve": "Bac+2 (BTS, DUT…)",
+  "experience": [
+    "Septembre 2021 - aujourd'hui : Agent de recouvrement, Crédit Express Dakar",
+    "Relances téléphoniques et négociation d'échéanciers",
+    "Suivi des dossiers clients dans le logiciel de gestion"
+  ],
+  "annees_experience": 5.2,
+  "competences": [
+    "Recouvrement",
+    "négociation",
+    "gestion des appels sortants",
+    "Excel"
+  ],
+  "competences_metier": [
+    "Appels sortants",
+    "Recouvrement",
+    "Négociation",
+    "Bureautique"
+  ],
+  "langues": [
+    "Français",
+    "Wolof",
+    "Arabe"
+  ],
+  "sections_detectees": [
+    "experience",
+    "formation",
+    "competences",
+    "langues"
+  ],
+  "duree_traitement_s": 0.02
+}

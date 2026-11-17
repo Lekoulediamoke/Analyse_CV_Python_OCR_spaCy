@@ -1,0 +1,65 @@
+{
+  "fichier": "cv_aminata_ndiaye.pdf",
+  "methode_extraction": "texte PDF",
+  "confiance_ocr": null,
+  "a_verifier": "non",
+  "nom": "Aminata Ndiaye",
+  "poste_vise": "Conseillère clientèle bilingue",
+  "email": "aminata.ndiaye@example.com",
+  "telephone": "+221 77 512 34 56",
+  "formation": [
+    "2019 Licence en Gestion des Entreprises - Université Cheikh Anta Diop",
+    "2016 Baccalauréat série L - Lycée Blaise Diagne, Dakar"
+  ],
+  "diplome_le_plus_eleve": "Licence / Bac+3",
+  "experience": [
+    "Conseillère clientèle - TéléServices Afrique, Dakar",
+    "Mars 2022 - Présent",
+    "Gestion des appels entrants pour un opérateur télécom français",
+    "Traitement des réclamations et suivi dans le CRM Salesforce",
+    "Vente additionnelle d'options : 112 % de l'objectif en 2024",
+    "Téléconseillère - Centre d'Appels Horizon, Dakar",
+    "Janvier 2020 - Février 2022",
+    "Appels sortants de fidélisation et de recouvrement",
+    "Réponse aux demandes clients par e-mail et chat"
+  ],
+  "annees_experience": 6.7,
+  "competences": [
+    "Relation client",
+    "écoute active",
+    "gestion des réclamations",
+    "Vente additionnelle",
+    "fidélisation",
+    "Salesforce",
+    "Zendesk",
+    "Pack Office"
+  ],
+  "competences_metier": [
+    "Relation client",
+    "Écoute active",
+    "Gestion des réclamations",
+    "Appels entrants",
+    "Appels sortants",
+    "Vente / vente additionnelle",
+    "Fidélisation",
+    "Recouvrement",
+    "Multicanal (e-mail, chat)",
+    "Outils CRM",
+    "Bureautique",
+    "Indicateurs (KPI)"
+  ],
+  "langues": [
+    "Français",
+    "Anglais",
+    "Wolof"
+  ],
+  "sections_detectees": [
+    "profil",
+    "experience",
+    "formation",
+    "competences",
+    "langues",
+    "interets"
+  ],
+  "duree_traitement_s": 0.05
+}

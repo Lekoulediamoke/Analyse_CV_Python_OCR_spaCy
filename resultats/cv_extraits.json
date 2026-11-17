@@ -1,0 +1,202 @@
+[
+  {
+    "fichier": "cv_aminata_ndiaye.pdf",
+    "methode_extraction": "texte PDF",
+    "confiance_ocr": null,
+    "a_verifier": "non",
+    "nom": "Aminata Ndiaye",
+    "poste_vise": "Conseillère clientèle bilingue",
+    "email": "aminata.ndiaye@example.com",
+    "telephone": "+221 77 512 34 56",
+    "formation": [
+      "2019 Licence en Gestion des Entreprises - Université Cheikh Anta Diop",
+      "2016 Baccalauréat série L - Lycée Blaise Diagne, Dakar"
+    ],
+    "diplome_le_plus_eleve": "Licence / Bac+3",
+    "experience": [
+      "Conseillère clientèle - TéléServices Afrique, Dakar",
+      "Mars 2022 - Présent",
+      "Gestion des appels entrants pour un opérateur télécom français",
+      "Traitement des réclamations et suivi dans le CRM Salesforce",
+      "Vente additionnelle d'options : 112 % de l'objectif en 2024",
+      "Téléconseillère - Centre d'Appels Horizon, Dakar",
+      "Janvier 2020 - Février 2022",
+      "Appels sortants de fidélisation et de recouvrement",
+      "Réponse aux demandes clients par e-mail et chat"
+    ],
+    "annees_experience": 6.7,
+    "competences": [
+      "Relation client",
+      "écoute active",
+      "gestion des réclamations",
+      "Vente additionnelle",
+      "fidélisation",
+      "Salesforce",
+      "Zendesk",
+      "Pack Office"
+    ],
+    "competences_metier": [
+      "Relation client",
+      "Écoute active",
+      "Gestion des réclamations",
+      "Appels entrants",
+      "Appels sortants",
+      "Vente / vente additionnelle",
+      "Fidélisation",
+      "Recouvrement",
+      "Multicanal (e-mail, chat)",
+      "Outils CRM",
+      "Bureautique",
+      "Indicateurs (KPI)"
+    ],
+    "langues": [
+      "Français",
+      "Anglais",
+      "Wolof"
+    ],
+    "sections_detectees": [
+      "profil",
+      "experience",
+      "formation",
+      "competences",
+      "langues",
+      "interets"
+    ],
+    "duree_traitement_s": 0.06
+  },
+  {
+    "fichier": "cv_awa_sarr_scan.pdf",
+    "methode_extraction": "OCR (PDF scanné)",
+    "confiance_ocr": 74.9,
+    "a_verifier": "OCR peu fiable (75/100)",
+    "nom": "Awa Sarr",
+    "poste_vise": "Téléconseillère",
+    "email": "awa.sarr@example.com",
+    "telephone": "78 645 12 90",
+    "formation": [
+      "2022 : BTS Communication d'entreprise, ISM Dakar",
+      "2020 : Baccalaursat série G",
+      "SAVOIR-FAIRE PRET EE TEUNRUES VERRE ...",
+      "Appels entrants ; assistance technique ; Excel ; Word : prise de notes rapide"
+    ],
+    "diplome_le_plus_eleve": "Bac+2 (BTS, DUT…)",
+    "experience": [
+      "2023 - 2025 : Téléconseillère, Callmax Sénégal",
+      "Service. après- -vente et assistance technique de niveau 1",
+      "* Respect des indicateurs : DMT, taux de resolution, satisfaction",
+      "2022 - 2023 : Agent d'accueil (stage), Banque ee Thies",
+      ". Accueil et orientation de la clientèle"
+    ],
+    "annees_experience": 4.8,
+    "competences": [],
+    "competences_metier": [
+      "Service après-vente",
+      "Appels entrants",
+      "Assistance technique",
+      "Bureautique",
+      "Indicateurs (KPI)"
+    ],
+    "langues": [
+      "Anglais",
+      "Wolof"
+    ],
+    "sections_detectees": [
+      "experience",
+      "formation",
+      "langues"
+    ],
+    "duree_traitement_s": 1.57
+  },
+  {
+    "fichier": "cv_ibrahima_ba.docx",
+    "methode_extraction": "texte Word",
+    "confiance_ocr": null,
+    "a_verifier": "non",
+    "nom": "Ibrahima Ba",
+    "poste_vise": "Agent de recouvrement / Conseiller clientèle",
+    "email": "ibrahima.ba@example.com",
+    "telephone": "+221 76 908 11 22",
+    "formation": [
+      "2021 : DUT Techniques de commercialisation - IUT de Dakar"
+    ],
+    "diplome_le_plus_eleve": "Bac+2 (BTS, DUT…)",
+    "experience": [
+      "Septembre 2021 - aujourd'hui : Agent de recouvrement, Crédit Express Dakar",
+      "Relances téléphoniques et négociation d'échéanciers",
+      "Suivi des dossiers clients dans le logiciel de gestion"
+    ],
+    "annees_experience": 5.2,
+    "competences": [
+      "Recouvrement",
+      "négociation",
+      "gestion des appels sortants",
+      "Excel"
+    ],
+    "competences_metier": [
+      "Appels sortants",
+      "Recouvrement",
+      "Négociation",
+      "Bureautique"
+    ],
+    "langues": [
+      "Français",
+      "Wolof",
+      "Arabe"
+    ],
+    "sections_detectees": [
+      "experience",
+      "formation",
+      "competences",
+      "langues"
+    ],
+    "duree_traitement_s": 0.04
+  },
+  {
+    "fichier": "cv_moussa_fall_photo.png",
+    "methode_extraction": "OCR (image)",
+    "confiance_ocr": 88.1,
+    "a_verifier": "e-mail reconstitué après l'OCR",
+    "nom": "Moussa Fall",
+    "poste_vise": "Chargé de clientèle",
+    "email": "moussa.fall@example.com",
+    "telephone": "70 321 5487",
+    "formation": [
+      "Master 1 Marketing et Commerce - Université Gaston Berger (2019)"
+    ],
+    "diplome_le_plus_eleve": "Master / Bac+5",
+    "experience": [
+      "Chargé de clientèle, Orbis Télécom (2021 - 2024)",
+      "Gestion d'un portefeuille de clients professionnels",
+      "Négociation et vente de forfaits mobiles",
+      "Commercial terrain, Distribution Plus {2019 - 2021)",
+      "Prospection et vente en porte-a-parte"
+    ],
+    "annees_experience": 6.8,
+    "competences": [
+      "Négociation",
+      "Prospection",
+      "CRM",
+      "Excel",
+      "communication"
+    ],
+    "competences_metier": [
+      "Vente / vente additionnelle",
+      "Négociation",
+      "Prospection",
+      "Outils CRM",
+      "Bureautique"
+    ],
+    "langues": [
+      "Français",
+      "Anglais",
+      "Pulaar"
+    ],
+    "sections_detectees": [
+      "experience",
+      "formation",
+      "competences",
+      "langues"
+    ],
+    "duree_traitement_s": 0.76
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "fichier": "cv_moussa_fall_photo.png",
+  "methode_extraction": "OCR (image)",
+  "confiance_ocr": 88.1,
+  "a_verifier": "e-mail reconstitué après l'OCR",
+  "nom": "Moussa Fall",
+  "poste_vise": "Chargé de clientèle",
+  "email": "moussa.fall@example.com",
+  "telephone": "70 321 5487",
+  "formation": [
+    "Master 1 Marketing et Commerce - Université Gaston Berger (2019)"
+  ],
+  "diplome_le_plus_eleve": "Master / Bac+5",
+  "experience": [
+    "Chargé de clientèle, Orbis Télécom (2021 - 2024)",
+    "Gestion d'un portefeuille de clients professionnels",
+    "Négociation et vente de forfaits mobiles",
+    "Commercial terrain, Distribution Plus {2019 - 2021)",
+    "Prospection et vente en porte-a-parte"
+  ],
+  "annees_experience": 6.8,
+  "competences": [
+    "Négociation",
+    "Prospection",
+    "CRM",
+    "Excel",
+    "communication"
+  ],
+  "competences_metier": [
+    "Vente / vente additionnelle",
+    "Négociation",
+    "Prospection",
+    "Outils CRM",
+    "Bureautique"
+  ],
+  "langues": [
+    "Français",
+    "Anglais",
+    "Pulaar"
+  ],
+  "sections_detectees": [
+    "experience",
+    "formation",
+    "competences",
+    "langues"
+  ],
+  "duree_traitement_s": 0.78
+}
