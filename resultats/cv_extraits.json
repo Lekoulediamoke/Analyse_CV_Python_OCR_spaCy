@@ -62,29 +62,29 @@
       "langues",
       "interets"
     ],
-    "duree_traitement_s": 0.06
+    "duree_traitement_s": 0.05
   },
   {
     "fichier": "cv_awa_sarr_scan.pdf",
     "methode_extraction": "OCR (PDF scanné)",
-    "confiance_ocr": 74.9,
-    "a_verifier": "OCR peu fiable (75/100)",
+    "confiance_ocr": 77.3,
+    "a_verifier": "OCR peu fiable (77/100)",
     "nom": "Awa Sarr",
     "poste_vise": "Téléconseillère",
     "email": "awa.sarr@example.com",
     "telephone": "78 645 12 90",
     "formation": [
-      "2022 : BTS Communication d'entreprise, ISM Dakar",
-      "2020 : Baccalaursat série G",
-      "SAVOIR-FAIRE PRET EE TEUNRUES VERRE ...",
+      "2022: BTS Communication d'entreprise, ISM Dakar",
+      "2020 : Baccalaureat série G",
+      "SAVOIR-FAIRE PT IT RENTE PRLTES DUR",
       "Appels entrants ; assistance technique ; Excel ; Word : prise de notes rapide"
     ],
     "diplome_le_plus_eleve": "Bac+2 (BTS, DUT…)",
     "experience": [
       "2023 - 2025 : Téléconseillère, Callmax Sénégal",
-      "Service. après- -vente et assistance technique de niveau 1",
-      "* Respect des indicateurs : DMT, taux de resolution, satisfaction",
-      "2022 - 2023 : Agent d'accueil (stage), Banque ee Thies",
+      "Service. apres- -vente et assistance technique de niveau 1",
+      "oS Respect des indicateurs : DMT, taux de résolution, satisfaction",
+      "\"2022 - 2023 : Agent d'accueil (stage}, Banque sai eas dé Thiès",
       ". Accueil et orientation de la clientèle"
     ],
     "annees_experience": 4.8,
@@ -97,6 +97,7 @@
       "Indicateurs (KPI)"
     ],
     "langues": [
+      "Français",
       "Anglais",
       "Wolof"
     ],
@@ -105,7 +106,7 @@
       "formation",
       "langues"
     ],
-    "duree_traitement_s": 1.57
+    "duree_traitement_s": 1.11
   },
   {
     "fichier": "cv_ibrahima_ba.docx",
@@ -123,7 +124,9 @@
     "experience": [
       "Septembre 2021 - aujourd'hui : Agent de recouvrement, Crédit Express Dakar",
       "Relances téléphoniques et négociation d'échéanciers",
-      "Suivi des dossiers clients dans le logiciel de gestion"
+      "Suivi des dossiers clients dans le logiciel de gestion",
+      "03/2019 - 08/2021 : Téléopérateur, Phone Services Dakar",
+      "Prise d'appels entrants et mise à jour des fiches clients"
     ],
     "annees_experience": 5.2,
     "competences": [
@@ -147,34 +150,35 @@
       "experience",
       "formation",
       "competences",
-      "langues"
+      "langues",
+      "interets"
     ],
-    "duree_traitement_s": 0.04
+    "duree_traitement_s": 0.02
   },
   {
     "fichier": "cv_moussa_fall_photo.png",
     "methode_extraction": "OCR (image)",
-    "confiance_ocr": 88.1,
-    "a_verifier": "e-mail reconstitué après l'OCR",
+    "confiance_ocr": 90.5,
+    "a_verifier": "non",
     "nom": "Moussa Fall",
     "poste_vise": "Chargé de clientèle",
-    "email": "moussa.fall@example.com",
-    "telephone": "70 321 5487",
+    "email": "moussa.fall@examiple.com",
+    "telephone": "70 321 54 87",
     "formation": [
       "Master 1 Marketing et Commerce - Université Gaston Berger (2019)"
     ],
     "diplome_le_plus_eleve": "Master / Bac+5",
     "experience": [
-      "Chargé de clientèle, Orbis Télécom (2021 - 2024)",
-      "Gestion d'un portefeuille de clients professionnels",
+      "Chargé de clientéle, Orbis Télécom (2021 - 2024)",
+      "+ Gestion d'un portefeuille dé clients professionnels",
       "Négociation et vente de forfaits mobiles",
-      "Commercial terrain, Distribution Plus {2019 - 2021)",
-      "Prospection et vente en porte-a-parte"
+      "Commercial terrain, Distribution Plus (2019 - 2021}",
+      "Prospection et vente én porte-a-porte"
     ],
     "annees_experience": 6.8,
     "competences": [
       "Négociation",
-      "Prospection",
+      "prospection",
       "CRM",
       "Excel",
       "communication"
@@ -197,6 +201,6 @@
       "competences",
       "langues"
     ],
-    "duree_traitement_s": 0.76
+    "duree_traitement_s": 0.57
   }
 ]

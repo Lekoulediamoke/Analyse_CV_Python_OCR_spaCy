@@ -1,6 +1,6 @@
-# Présélection automatisée de CV de conseillers clientèle
+# Analyse de CV en apprentissage automatique avec Python, OCR et spaCy
 
-Projet de certification : lire des CV (PDF, scans, photos, Word), en extraire les informations clés avec l'OCR et le traitement automatique du langage (spaCy), puis aider le recruteur à présélectionner les candidats.
+Projet de certification, appliqué à la présélection de conseillers clientèle : lire des CV (PDF, scans, photos, Word), en extraire les informations clés avec l'OCR et le traitement automatique du langage (spaCy), puis aider le recruteur à présélectionner les candidats.
 
 ## Phase 1 : extraction des données
 
@@ -16,6 +16,16 @@ Projet de certification : lire des CV (PDF, scans, photos, Word), en extraire le
 
 Les CV du dossier `cv_exemples/` sont **fictifs** (créés par `generer_cv_exemples.py`) et couvrent quatre formats : PDF numérique, PDF scanné, photo et Word.
 
+## Phase 2 : nettoyage et normalisation
+
+`phase2_nettoyage.py` reprend les résultats de la phase 1 :
+
+1. **Bruit et informations non pertinentes** (expressions régulières) : symboles parasites de l'OCR, numéros de page, sections sans intérêt pour le recrutement (centres d'intérêt, références) et informations personnelles sources de discrimination (date de naissance, situation familiale, nationalité)
+2. **Incohérences de formatage** : dates de formats variés (« Mars 2022 », « 03/2019 », « 2023 ») converties en `AAAA-MM` avec `dateutil`, années d'expérience recalculées en fusionnant les périodes qui se chevauchent, téléphones au format international, e-mails et noms unifiés, mots mal reconnus par l'OCR corrigés, compétences dédoublonnées, poste ramené à une catégorie standard
+3. **Normalisation linguistique** : tokenisation et mots vides (spaCy), racinisation (NLTK) et lemmatisation (spaCy)
+
+Sorties : `resultats/cv_nettoyes.csv` et `.json`, `resultats/journal_nettoyage.csv` (chaque correction avec sa valeur avant et après), `resultats/exemple_normalisation.csv` et `resultats/textes_nettoyes/`.
+
 ## Installation
 
 1. Installer **Tesseract OCR** pour Windows (installateur UB Mannheim), en cochant la langue **French** dans « Additional language data ».
@@ -23,6 +33,7 @@ Les CV du dossier `cv_exemples/` sont **fictifs** (créés par `generer_cv_exemp
 
 ```
 python -m pip install -r requirements.txt
+python -m spacy download fr_core_news_sm
 ```
 
 ## Utilisation
@@ -30,6 +41,7 @@ python -m pip install -r requirements.txt
 ```
 python generer_cv_exemples.py
 python phase1_extraction.py
+python phase2_nettoyage.py
 ```
 
 Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
@@ -39,6 +51,7 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 | Fichier ou dossier | Rôle |
 |---|---|
 | `phase1_extraction.py` | Extraction des données (phase 1) |
+| `phase2_nettoyage.py` | Nettoyage et normalisation (phase 2) |
 | `generer_cv_exemples.py` | Création des CV fictifs de test |
 | `cv_exemples/` | CV de test (4 formats) |
 | `resultats/` | Informations extraites |

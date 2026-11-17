@@ -1,6 +1,7 @@
 # ==============================================================
 # PHASE 1 - Extraction des données des CV
-# Projet : présélection automatisée de CV de conseillers clientèle
+# Projet : Analyse de CV en apprentissage automatique avec Python, OCR et spaCy
+#          (cas d'usage : présélection de conseillers clientèle)
 #
 # Pour chaque CV du dossier cv_exemples/ (PDF, image ou Word) :
 #   1. Extraction du texte : lecture directe, ou OCR (Tesseract) si le

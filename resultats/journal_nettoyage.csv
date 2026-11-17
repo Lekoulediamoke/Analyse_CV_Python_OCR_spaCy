@@ -1,0 +1,57 @@
+﻿fichier;champ;regle;avant;apres
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;Dakar, Sénégal | +221 77 512 34 56 | aminata.ndiaye@example.com;Dakar, Sénégal +221 77 512 34 56 aminata.ndiaye@example.com
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;Conseillère clientèle avec 6 ans d'expérience en centre de contact,;Conseillère clientèle avec 6 ans d'expérience en centre de contact
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;orientée satisfaction client et résolution au premier appel.;orientée satisfaction client et résolution au premier appel
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Gestion des appels entrants pour un opérateur télécom français;Gestion des appels entrants pour un opérateur télécom français
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Traitement des réclamations et suivi dans le CRM Salesforce;Traitement des réclamations et suivi dans le CRM Salesforce
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Vente additionnelle d'options : 112 % de l'objectif en 2024;Vente additionnelle d'options : 112 % de l'objectif en 2024
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Appels sortants de fidélisation et de recouvrement;Appels sortants de fidélisation et de recouvrement
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Réponse aux demandes clients par e-mail et chat;Réponse aux demandes clients par e-mail et chat
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Relation client, écoute active, gestion des réclamations;Relation client, écoute active, gestion des réclamations
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Vente additionnelle, fidélisation;Vente additionnelle, fidélisation
+cv_aminata_ndiaye.pdf;texte;nettoyage regex;- Salesforce, Zendesk, Pack Office;Salesforce, Zendesk, Pack Office
+cv_aminata_ndiaye.pdf;texte;section non pertinente retirée;CENTRES D'INTÉRÊT;
+cv_aminata_ndiaye.pdf;texte;section non pertinente retirée;Lecture, bénévolat associatif, basket-ball;
+cv_aminata_ndiaye.pdf;periode;date normalisée (dateutil);Mars 2022 - Présent;2022-03 -> 2026-11
+cv_aminata_ndiaye.pdf;periode;date normalisée (dateutil);Janvier 2020 - Février 2022;2020-01 -> 2022-02
+cv_aminata_ndiaye.pdf;annees_experience;recalculée : dates normalisées, chevauchements fusionnés;6.7;6.9
+cv_aminata_ndiaye.pdf;competences;casse / synonyme unifiés;écoute active;Écoute active
+cv_aminata_ndiaye.pdf;competences;casse / synonyme unifiés;gestion des réclamations;Gestion des réclamations
+cv_aminata_ndiaye.pdf;competences;casse / synonyme unifiés;fidélisation;Fidélisation
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;2 Téléconseillère;Téléconseillère
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;PARCOURS PROFESSIONNEL.;PARCOURS PROFESSIONNEL
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;- Service. apres- -vente et assistance technique de niveau 1;Service apres-vente et assistance technique de niveau 1
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;oS Respect des indicateurs : DMT, taux de résolution, satisfaction;Respect des indicateurs : DMT, taux de résolution, satisfaction
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;. Accueil et orientation de la clientèle;Accueil et orientation de la clientèle
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;2022: BTS Communication d'entreprise, ISM Dakar;2022 : BTS Communication d'entreprise, ISM Dakar
+cv_awa_sarr_scan.pdf;texte;nettoyage regex;LANGUES.;LANGUES
+cv_awa_sarr_scan.pdf;texte;correction d'un mot mal reconnu (OCR);apres;après
+cv_awa_sarr_scan.pdf;texte;correction d'un mot mal reconnu (OCR);Baccalaureat;Baccalauréat
+cv_awa_sarr_scan.pdf;telephone;format international;78 645 12 90;+221 78 645 12 90
+cv_awa_sarr_scan.pdf;formation;correction d'un mot mal reconnu (OCR);Baccalaureat;Baccalauréat
+cv_awa_sarr_scan.pdf;experience;correction d'un mot mal reconnu (OCR);apres;après
+cv_awa_sarr_scan.pdf;periode;date normalisée (dateutil);2023 - 2025;2023-01 -> 2025-12
+cv_awa_sarr_scan.pdf;periode;date normalisée (dateutil);2022 - 2023;2022-01 -> 2023-12
+cv_awa_sarr_scan.pdf;annees_experience;recalculée : dates normalisées, chevauchements fusionnés;4.8;4.0
+cv_ibrahima_ba.docx;texte;information personnelle retirée;Né le 14/05/1997 - Marié - Nationalité sénégalaise;
+cv_ibrahima_ba.docx;texte;section non pertinente retirée;Centres d'intérêt;
+cv_ibrahima_ba.docx;texte;section non pertinente retirée;Football, lecture, cuisine;
+cv_ibrahima_ba.docx;texte;section non pertinente retirée;Page 1/1;
+cv_ibrahima_ba.docx;periode;date normalisée (dateutil);Septembre 2021 - aujourd'hui;2021-09 -> 2026-11
+cv_ibrahima_ba.docx;periode;date normalisée (dateutil);03/2019 - 08/2021;2019-03 -> 2021-08
+cv_ibrahima_ba.docx;annees_experience;recalculée : dates normalisées, chevauchements fusionnés;5.2;7.8
+cv_ibrahima_ba.docx;competences;casse / synonyme unifiés;négociation;Négociation
+cv_ibrahima_ba.docx;competences;casse / synonyme unifiés;gestion des appels sortants;Gestion des appels sortants
+cv_moussa_fall_photo.png;texte;nettoyage regex;+ Gestion d'un portefeuille dé clients professionnels;Gestion d'un portefeuille dé clients professionnels
+cv_moussa_fall_photo.png;texte;nettoyage regex;- Négociation et vente de forfaits mobiles;Négociation et vente de forfaits mobiles
+cv_moussa_fall_photo.png;texte;nettoyage regex;- Prospection et vente én porte-a-porte;Prospection et vente én porte-a-porte
+cv_moussa_fall_photo.png;texte;correction d'un mot mal reconnu (OCR);EXPERIENCE;EXPÉRIENCE
+cv_moussa_fall_photo.png;texte;correction d'un mot mal reconnu (OCR);clientéle;clientèle
+cv_moussa_fall_photo.png;texte;correction d'un mot mal reconnu (OCR);Frangais;Français
+cv_moussa_fall_photo.png;telephone;format international;70 321 54 87;+221 70 321 54 87
+cv_moussa_fall_photo.png;experience;correction d'un mot mal reconnu (OCR);clientéle;clientèle
+cv_moussa_fall_photo.png;periode;date normalisée (dateutil);2021 - 2024;2021-01 -> 2024-12
+cv_moussa_fall_photo.png;periode;date normalisée (dateutil);2019 - 2021;2019-01 -> 2021-12
+cv_moussa_fall_photo.png;annees_experience;recalculée : dates normalisées, chevauchements fusionnés;6.8;6.0
+cv_moussa_fall_photo.png;competences;casse / synonyme unifiés;prospection;Prospection
+cv_moussa_fall_photo.png;competences;casse / synonyme unifiés;communication;Communication
