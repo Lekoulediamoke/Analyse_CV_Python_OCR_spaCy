@@ -48,6 +48,17 @@ Sorties : `resultats_ner/` (scores, erreurs, entités trouvées, graphique) et l
 
 Sorties : `resultats_relations/`.
 
+## Phase 5 : intégration des données et modélisation
+
+`phase5_base_donnees.py` :
+
+1. **Schéma de base de données** (SQLite, `resultats_bdd/schema.sql`) : `candidats`, `experiences`, `formations`, `competences` reliées aux candidats par `candidat_competences` (relation plusieurs à plusieurs), `rejets` (contrôle qualité), `decisions` (décisions passées du recruteur) et `predictions`
+2. **Remplissage** avec les informations extraites : les 4 CV d'exemple passés par tout le pipeline (champs de la phase 2, relations de la phase 4) et 400 CV fictifs annotés, reliés avec la technique de la phase 4. Les informations douteuses (intitulé de poste trop long, diplôme inconnu, niveau d'études incohérent) sont écartées ou corrigées et notées dans `rejets`
+3. **Requêtes SQL et analyse** : jointures, regroupements, sous-requêtes, fonction de fenêtre (`resultats_bdd/requetes.sql`) et graphiques
+4. **Apprentissage automatique** : régression logistique, arbre de décision et forêt aléatoire, entraînés sur 9 variables calculées en SQL pour prédire si un candidat sera retenu pour un entretien ; validation croisée, importance des critères, puis classement des nouvelles candidatures. Les décisions passées des CV fictifs sont **simulées** ; en entreprise, on utiliserait l'historique réel des recrutements.
+
+Sorties : `resultats_bdd/` (base `base_cv.db`, schéma, requêtes, scores, graphiques).
+
 ## Tests
 
 `tester_projet.py` vérifie automatiquement les résultats de chaque phase sur les CV fictifs, dont le contenu est connu (e-mails, formats, années d'expérience, informations personnelles retirées, scores du modèle…). Il se lance après chaque phase et avant chaque envoi sur GitHub :
@@ -77,6 +88,7 @@ python generer_donnees_annotees.py
 python phase3_ner.py
 python generer_donnees_relations.py
 python phase4_relations.py
+python phase5_base_donnees.py
 python tester_projet.py
 ```
 
@@ -91,6 +103,7 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 | `generer_donnees_annotees.py` | Création du jeu de CV annotés |
 | `generer_donnees_relations.py` | Création des CV annotés avec leurs relations |
 | `phase4_relations.py` | Extraction des relations et validation (phase 4) |
+| `phase5_base_donnees.py` | Base de données, requêtes SQL et modèle de présélection (phase 5) |
 | `tester_projet.py` | Tests automatiques de chaque phase |
 | `phase3_ner.py` | Reconnaissance d'entités : entraînement et évaluation (phase 3) |
 | `generer_cv_exemples.py` | Création des CV fictifs de test |

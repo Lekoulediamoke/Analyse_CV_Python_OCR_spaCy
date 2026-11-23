@@ -1,0 +1,4 @@
+﻿modele;auc_validation_croisee;ecart_type;exactitude;precision;rappel;f1;auc
+Régression logistique;0.8041;0.0794;0.77;0.8039;0.7593;0.781;0.8394
+Arbre de décision;0.756;0.0842;0.75;0.7959;0.7222;0.7573;0.7929
+Forêt aléatoire;0.7777;0.0726;0.75;0.7636;0.7778;0.7706;0.8229

@@ -6,3 +6,6 @@ reportlab
 python-dateutil
 nltk
 spacy
+pandas
+matplotlib
+scikit-learn

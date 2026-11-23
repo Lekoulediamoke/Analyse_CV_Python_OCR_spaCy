@@ -182,10 +182,59 @@ def tester_phase4():
                  any("TéléServices" in e for e in employeurs), employeurs)
 
 
+def tester_phase5():
+    print("\n=== Phase 5 : base de données et modélisation ===")
+    import sqlite3
+    dossier = "resultats_bdd"
+    base = os.path.join(dossier, "base_cv.db")
+    if not os.path.exists(base):
+        verifier("base de données présente", False, "lancez phase5_base_donnees.py")
+        return
+    con = sqlite3.connect(base)
+    valeur = lambda sql: con.execute(sql).fetchone()[0]
+    tables = {t for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type = 'table'")}
+    attendues = {"candidats", "experiences", "formations", "competences", "candidat_competences",
+                 "rejets", "decisions", "predictions"}
+    verifier("les 8 tables du schéma existent", attendues <= tables, sorted(tables))
+    verifier("400 CV fictifs intégrés", valeur("SELECT COUNT(*) FROM candidats WHERE source = 'fictif'") == 400)
+    verifier("4 CV d'exemple intégrés", valeur("SELECT COUNT(*) FROM candidats WHERE source = 'exemple'") == 4)
+    verifier("aucune clé étrangère cassée", not con.execute("PRAGMA foreign_key_check").fetchall())
+    verifier("chaque compétence n'est enregistrée qu'une fois",
+             valeur("SELECT COUNT(*) FROM (SELECT cle, type FROM competences "
+                    "GROUP BY cle, type HAVING COUNT(*) > 1)") == 0)
+    verifier("la plupart des expériences fictives ont des dates",
+             valeur("SELECT AVG(date_debut IS NOT NULL) FROM experiences e JOIN candidats c "
+                    "ON c.id = e.candidat_id WHERE c.source = 'fictif'") >= 0.95)
+    verifier("Aminata Ndiaye : TéléServices Afrique depuis mars 2022",
+             valeur("SELECT COUNT(*) FROM experiences e JOIN candidats c ON c.id = e.candidat_id "
+                    "WHERE c.nom = 'Aminata Ndiaye' AND e.entreprise LIKE 'TéléServices%' "
+                    "AND e.date_debut = '2022-03'") == 1)
+    verifier("Moussa Fall : Master 1 enregistré (Bac+4)",
+             valeur("SELECT COUNT(*) FROM formations f JOIN candidats c ON c.id = f.candidat_id "
+                    "WHERE c.nom = 'Moussa Fall' AND f.niveau = 4") == 1)
+    verifier("informations douteuses écartées dans « rejets »",
+             valeur("SELECT COUNT(*) FROM rejets") >= 1)
+    verifier("décisions passées pour les 400 CV fictifs", valeur("SELECT COUNT(*) FROM decisions") == 400)
+    verifier("requêtes SQL enregistrées", os.path.exists(os.path.join(dossier, "requetes.sql")))
+    chemin = os.path.join(dossier, "scores_modeles.csv")
+    if os.path.exists(chemin):
+        with open(chemin, encoding="utf-8-sig") as f:
+            scores = {l["modele"]: float(l["auc_validation_croisee"])
+                      for l in csv.DictReader(f, delimiter=";")}
+        verifier("3 modèles comparés", len(scores) == 3, list(scores))
+        verifier("meilleur modèle : AUC d'au moins 0,75", max(scores.values()) >= 0.75, scores)
+    else:
+        verifier("scores des modèles présents", False)
+    probas = [p for (p,) in con.execute("SELECT probabilite FROM predictions")]
+    verifier("les 4 nouvelles candidatures sont classées",
+             len(probas) == 4 and all(0 <= p <= 1 for p in probas), probas)
+    con.close()
+
+
 # --------------------------------------------------------------
 def main():
-    phases = sys.argv[1:] or ["1", "2", "3", "4"]
-    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3, "4": tester_phase4}
+    phases = sys.argv[1:] or ["1", "2", "3", "4", "5"]
+    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3, "4": tester_phase4, "5": tester_phase5}
     for phase in phases:
         tests[phase]()
     print(f"\n=== {reussis} tests réussis, {echecs} échecs ===")
