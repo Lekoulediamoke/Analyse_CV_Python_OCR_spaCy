@@ -1,0 +1,163 @@
+{
+  "cv_aminata_ndiaye.txt": {
+    "nom": "AMINATA NDIAYE",
+    "experiences": [
+      {
+        "poste": "Conseillère clientèle avec 6 ans d'expérience en centre de contact",
+        "entreprise": [],
+        "periode": []
+      },
+      {
+        "poste": "Conseillère clientèle",
+        "entreprise": [
+          "TéléServices Afrique"
+        ],
+        "periode": [
+          "Mars 2022"
+        ]
+      },
+      {
+        "poste": "Téléconseillère",
+        "entreprise": [],
+        "periode": []
+      },
+      {
+        "poste": "Centre d'Appels Horizon",
+        "entreprise": [],
+        "periode": [
+          "Janvier 2020",
+          "Février 2022"
+        ]
+      }
+    ],
+    "formations": [
+      {
+        "diplome": "Licence en Gestion des Entreprises",
+        "etablissement": [
+          "Université Cheikh Anta Diop"
+        ],
+        "date": [
+          "2019"
+        ]
+      },
+      {
+        "diplome": "Baccalauréat série L",
+        "etablissement": [
+          "Lycée Blaise Diagne"
+        ],
+        "date": [
+          "2016"
+        ]
+      }
+    ]
+  },
+  "cv_awa_sarr_scan.txt": {
+    "nom": "Awa SARR",
+    "experiences": [
+      {
+        "poste": "Téléconseillère",
+        "entreprise": [
+          "Callmax Sénégal"
+        ],
+        "periode": [
+          "2023",
+          "2025"
+        ]
+      },
+      {
+        "poste": "Agent d'accueil",
+        "entreprise": [
+          "Banque ee Thiès"
+        ],
+        "periode": [
+          "2022",
+          "2023"
+        ]
+      }
+    ],
+    "formations": [
+      {
+        "diplome": "BTS Communication d'entreprise",
+        "etablissement": [
+          "ISM Dakar"
+        ],
+        "date": [
+          "2022"
+        ]
+      },
+      {
+        "diplome": "Baccalauréat série G",
+        "etablissement": [],
+        "date": [
+          "2020"
+        ]
+      }
+    ]
+  },
+  "cv_ibrahima_ba.txt": {
+    "nom": "Ibrahima BA",
+    "experiences": [
+      {
+        "poste": "Agent de recouvrement",
+        "entreprise": [
+          "Crédit Express Dakar"
+        ],
+        "periode": [
+          "Septembre 2021"
+        ]
+      },
+      {
+        "poste": "Téléopérateur",
+        "entreprise": [
+          "Phone Services Dakar"
+        ],
+        "periode": [
+          "08/2021",
+          "03/2019"
+        ]
+      }
+    ],
+    "formations": [
+      {
+        "diplome": "/ Conseiller clientèle",
+        "etablissement": [],
+        "date": []
+      },
+      {
+        "diplome": "DUT Techniques de commercialisation",
+        "etablissement": [
+          "IUT de Dakar"
+        ],
+        "date": [
+          "2021"
+        ]
+      }
+    ]
+  },
+  "cv_moussa_fall_photo.txt": {
+    "nom": "MOUSSA FALL",
+    "experiences": [
+      {
+        "poste": "Chargé de clientèle",
+        "entreprise": [
+          "Orbis Télécom"
+        ],
+        "periode": [
+          "2021",
+          "2024"
+        ]
+      }
+    ],
+    "formations": [
+      {
+        "diplome": "Master 1 Marketing et Commerce",
+        "etablissement": [
+          "Université Gaston Berger"
+        ],
+        "date": [
+          "2019"
+        ]
+      }
+    ]
+  }
+}

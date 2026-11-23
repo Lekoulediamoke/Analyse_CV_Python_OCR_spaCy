@@ -249,20 +249,25 @@ def en_format_projet(texte, entites, partie):
     return {"content": texte, "annotation": annotations, "extras": {"partie": partie}}
 
 
-os.makedirs("donnees", exist_ok=True)
-compte = {"train": 0, "test": 0}
-etiquettes = {}
-with open(os.path.join("donnees", "cv_annotes.json"), "w", encoding="utf-8") as f:
-    for i in range(NB_CV):
-        partie = "test" if i < NB_CV * PART_TEST else "train"
-        texte, entites = creer_cv(partie)
-        f.write(json.dumps(en_format_projet(texte, entites, partie), ensure_ascii=False) + "\n")
-        compte[partie] += 1
-        for etiquette, *_ in entites:
-            etiquettes[etiquette] = etiquettes.get(etiquette, 0) + 1
+def main():
+    os.makedirs("donnees", exist_ok=True)
+    compte = {"train": 0, "test": 0}
+    etiquettes = {}
+    with open(os.path.join("donnees", "cv_annotes.json"), "w", encoding="utf-8") as f:
+        for i in range(NB_CV):
+            partie = "test" if i < NB_CV * PART_TEST else "train"
+            texte, entites = creer_cv(partie)
+            f.write(json.dumps(en_format_projet(texte, entites, partie), ensure_ascii=False) + "\n")
+            compte[partie] += 1
+            for etiquette, *_ in entites:
+                etiquettes[etiquette] = etiquettes.get(etiquette, 0) + 1
 
-print(f"Fichier donnees/cv_annotes.json créé : {NB_CV} CV annotés "
-      f"({compte['train']} entraînement, {compte['test']} test)")
-print("Entités par étiquette :")
-for etiquette, nombre in sorted(etiquettes.items(), key=lambda x: -x[1]):
-    print(f"  {etiquette:<14} {nombre}")
+    print(f"Fichier donnees/cv_annotes.json créé : {NB_CV} CV annotés "
+          f"({compte['train']} entraînement, {compte['test']} test)")
+    print("Entités par étiquette :")
+    for etiquette, nombre in sorted(etiquettes.items(), key=lambda x: -x[1]):
+        print(f"  {etiquette:<14} {nombre}")
+
+
+if __name__ == "__main__":
+    main()

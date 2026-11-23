@@ -38,6 +38,16 @@ Sorties : `resultats/cv_nettoyes.csv` et `.json`, `resultats/journal_nettoyage.c
 
 Sorties : `resultats_ner/` (scores, erreurs, entités trouvées, graphique) et le modèle dans `modele_ner/` (non versionné, recréé par le script).
 
+## Phase 4 : extraction des relations
+
+`phase4_relations.py` relie les entités entre elles : la personne et ses postes (A_OCCUPE), le poste et son entreprise (EMPLOYEUR) et ses dates (PERIODE), l'entreprise et sa ville (LIEU), le diplôme et son établissement (ECOLE) et sa date (OBTENU_EN).
+
+1. **Techniques comparées** : co-occurrence sur la ligne, proximité dans le texte, analyse des dépendances syntaxiques (spaCy `fr_core_news_sm`), et règle de mise en page (dates écrites sous le poste)
+2. **Analyse des dépendances** : exemple commenté sur une phrase à deux expériences, arbre dessiné dans `arbre_dependances.html`
+3. **Validation** : précision, rappel et score F de chaque technique sur 150 CV annotés avec leurs relations (`generer_donnees_relations.py`), puis du système complet avec les entités prédites par le modèle de la phase 3 ; fiches reconstruites pour les CV de la phase 2
+
+Sorties : `resultats_relations/`.
+
 ## Tests
 
 `tester_projet.py` vérifie automatiquement les résultats de chaque phase sur les CV fictifs, dont le contenu est connu (e-mails, formats, années d'expérience, informations personnelles retirées, scores du modèle…). Il se lance après chaque phase et avant chaque envoi sur GitHub :
@@ -65,6 +75,9 @@ python phase1_extraction.py
 python phase2_nettoyage.py
 python generer_donnees_annotees.py
 python phase3_ner.py
+python generer_donnees_relations.py
+python phase4_relations.py
+python tester_projet.py
 ```
 
 Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
@@ -76,6 +89,8 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 | `phase1_extraction.py` | Extraction des données (phase 1) |
 | `phase2_nettoyage.py` | Nettoyage et normalisation (phase 2) |
 | `generer_donnees_annotees.py` | Création du jeu de CV annotés |
+| `generer_donnees_relations.py` | Création des CV annotés avec leurs relations |
+| `phase4_relations.py` | Extraction des relations et validation (phase 4) |
 | `tester_projet.py` | Tests automatiques de chaque phase |
 | `phase3_ner.py` | Reconnaissance d'entités : entraînement et évaluation (phase 3) |
 | `generer_cv_exemples.py` | Création des CV fictifs de test |

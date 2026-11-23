@@ -155,9 +155,37 @@ def tester_phase3():
 
 
 # --------------------------------------------------------------
+def tester_phase4():
+    print("\n=== Phase 4 : extraction des relations ===")
+    dossier = "resultats_relations"
+    chemin = os.path.join(dossier, "scores_techniques.csv")
+    if not os.path.exists(chemin):
+        verifier("résultats de la phase 4 présents", False, "lancez phase4_relations.py")
+        return
+    with open(chemin, encoding="utf-8-sig") as f:
+        scores = {l["technique"]: float(l["score_f"]) for l in csv.DictReader(f, delimiter=";")}
+    verifier("5 techniques évaluées", len(scores) == 5, list(scores))
+    meilleure = max(scores.values())
+    verifier("meilleure technique : score F d'au moins 80 %", meilleure >= 0.80, f"{meilleure:.2%}")
+    verifier("la meilleure technique bat la co-occurrence",
+             meilleure > scores.get("Co-occurrence", 1), scores)
+    verifier("la règle de mise en page améliore les dépendances",
+             scores.get("Dépendances + mise en page", 0) >= scores.get("Dépendances", 1), scores)
+    verifier("arbre de dépendances dessiné",
+             os.path.exists(os.path.join(dossier, "arbre_dependances.html")))
+    chemin_fiches = os.path.join(dossier, "fiches_cv.json")
+    if os.path.exists(chemin_fiches):
+        fiches = charger_json(chemin_fiches)
+        aminata = fiches.get("cv_aminata_ndiaye.txt", {})
+        employeurs = [e for x in aminata.get("experiences", []) for e in x["entreprise"]]
+        verifier("Aminata Ndiaye : un poste relié à TéléServices Afrique",
+                 any("TéléServices" in e for e in employeurs), employeurs)
+
+
+# --------------------------------------------------------------
 def main():
-    phases = sys.argv[1:] or ["1", "2", "3"]
-    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3}
+    phases = sys.argv[1:] or ["1", "2", "3", "4"]
+    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3, "4": tester_phase4}
     for phase in phases:
         tests[phase]()
     print(f"\n=== {reussis} tests réussis, {echecs} échecs ===")
