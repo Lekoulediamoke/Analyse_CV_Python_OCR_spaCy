@@ -59,6 +59,16 @@ Sorties : `resultats_relations/`.
 
 Sorties : `resultats_bdd/` (base `base_cv.db`, schéma, requêtes, scores, graphiques).
 
+## Application web pour les recruteurs
+
+`app.py` (Streamlit) met l'outil à la disposition de recruteurs qui ne codent pas : ils déposent des CV (PDF, scans, photos, Word), règlent leurs critères (expérience minimum, anglais, niveau d'études, compétences recherchées) et obtiennent un classement dont chaque score est expliqué, une fiche par candidat et un export Excel. La chaîne complète (phases 1 à 4) est dans `pipeline_cv.py`.
+
+Le score est une **grille transparente sur 100**, réglée par le recruteur, et non le modèle de la phase 5, entraîné sur des décisions simulées. Les CV ne sont pas conservés : ils sont analysés dans un dossier temporaire, puis supprimés.
+
+En local : `streamlit run app.py`
+
+En ligne, sur Streamlit Community Cloud (share.streamlit.io) : créer une application à partir de ce dépôt, fichier principal `app.py`, Python 3.12 dans « Advanced settings ». `packages.txt` installe Tesseract et le français ; `requirements.txt` installe les bibliothèques et le modèle spaCy. Au premier démarrage, le modèle d'entités de la phase 3 est entraîné (quelques minutes, une seule fois).
+
 ## Tests
 
 `tester_projet.py` vérifie automatiquement les résultats de chaque phase sur les CV fictifs, dont le contenu est connu (e-mails, formats, années d'expérience, informations personnelles retirées, scores du modèle…). Il se lance après chaque phase et avant chaque envoi sur GitHub :
@@ -66,6 +76,7 @@ Sorties : `resultats_bdd/` (base `base_cv.db`, schéma, requêtes, scores, graph
 ```
 python tester_projet.py        # toutes les phases
 python tester_projet.py 2      # une seule phase
+python tester_projet.py app    # l'application web
 ```
 
 ## Installation
@@ -75,7 +86,6 @@ python tester_projet.py 2      # une seule phase
 
 ```
 python -m pip install -r requirements.txt
-python -m spacy download fr_core_news_sm
 ```
 
 ## Utilisation
@@ -103,6 +113,8 @@ Pour analyser un autre dossier : `python phase1_extraction.py mon_dossier_de_cv`
 | `generer_donnees_annotees.py` | Création du jeu de CV annotés |
 | `generer_donnees_relations.py` | Création des CV annotés avec leurs relations |
 | `phase4_relations.py` | Extraction des relations et validation (phase 4) |
+| `app.py`, `pipeline_cv.py` | Application web pour les recruteurs et chaîne complète |
+| `packages.txt` | Logiciels à installer sur le serveur en ligne (Tesseract) |
 | `phase5_base_donnees.py` | Base de données, requêtes SQL et modèle de présélection (phase 5) |
 | `tester_projet.py` | Tests automatiques de chaque phase |
 | `phase3_ner.py` | Reconnaissance d'entités : entraînement et évaluation (phase 3) |

@@ -231,10 +231,29 @@ def tester_phase5():
     con.close()
 
 
+def tester_application():
+    print("\n=== Application web (pipeline_cv.py) ===")
+    import glob
+    import pipeline_cv as pc
+    langue = pc.langue_ocr()
+    verifier("Tesseract disponible pour l'application", langue is not None)
+    cvs, erreurs, doublons = pc.analyser_fichiers(sorted(glob.glob("cv_exemples/*")), langue)
+    verifier("les 4 CV d'exemple analysés sans erreur", len(cvs) == 4 and not erreurs, erreurs)
+    notes = {cv["nom"]: pc.evaluer(cv, experience_min=1, anglais_obligatoire=True,
+                                   competences_demandees=["Relation client", "CRM"]) for cv in cvs}
+    verifier("scores compris entre 0 et 100",
+             all(0 <= n["score"] <= 100 for n in notes.values()), {k: n["score"] for k, n in notes.items()})
+    verifier("Ibrahima Ba signalé : pas d'anglais",
+             "anglais" in notes.get("Ibrahima Ba", {}).get("statut", ""))
+    verifier("Aminata Ndiaye remplit les critères",
+             notes.get("Aminata Ndiaye", {}).get("statut") == "Remplit les critères")
+    verifier("chaque score est expliqué (5 lignes)", all(len(n["detail"]) == 5 for n in notes.values()))
+
+
 # --------------------------------------------------------------
 def main():
-    phases = sys.argv[1:] or ["1", "2", "3", "4", "5"]
-    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3, "4": tester_phase4, "5": tester_phase5}
+    phases = sys.argv[1:] or ["1", "2", "3", "4", "5", "app"]
+    tests = {"1": tester_phase1, "2": tester_phase2, "3": tester_phase3, "4": tester_phase4, "5": tester_phase5, "app": tester_application}
     for phase in phases:
         tests[phase]()
     print(f"\n=== {reussis} tests réussis, {echecs} échecs ===")
